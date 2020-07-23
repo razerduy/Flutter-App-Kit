@@ -3,7 +3,6 @@ import 'package:cards/generated/locale_key.g.dart';
 import 'package:cards/presentation/base/contract.dart';
 import 'package:cards/presentation/base/page.dart';
 import 'package:cards/presentation/base/viewmodel.dart';
-import 'package:cards/presentation/detail/detail.dart';
 import 'package:cards/presentation/home/home.dart';
 import 'package:cards/storage/dependencies/storage_module.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -40,11 +39,6 @@ class _MyAppState extends BaseState<MyApp, BaseContractView,
         primarySwatch: Colors.blue,
       ),
       home: HomePage(),
-      initialRoute: HomePage.routeName,
-      routes: {
-        HomePage.routeName: (context) => HomePage(),
-        DetailPage.routeName: (context) => DetailPage()
-      },
     );
   }
 
@@ -52,13 +46,6 @@ class _MyAppState extends BaseState<MyApp, BaseContractView,
   void initDependencies() {
     DomainModule.init();
     StorageModule.init();
-  }
-
-  @override
-  void deInitDependencies() {
-    super.deInitDependencies();
-    DomainModule.deInit();
-    StorageModule.deInit();
   }
 
   @override

@@ -13,7 +13,7 @@ class DetailPage extends StatefulWidget {
   static go(String title, String content) {
     DetailPageArguments arguments =
         DetailPageArguments(title: title, content: content);
-    Get.toNamed(routeName, arguments: arguments);
+    Get.to(DetailPage(), arguments: arguments);
   }
 
   @override

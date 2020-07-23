@@ -48,10 +48,9 @@ class _HomeState extends BaseState<
       ),
       body: SafeArea(
         child: Container(
-          child: Obx(
-            () => viewModel.isLoading.value
-                ? _renderLoading()
-                : _renderListItem(),
+          child: GetX<HomeViewModel>(
+            builder: (value) =>
+                value.isLoading.value ? _renderLoading() : _renderListItem(),
           ),
         ),
       ),

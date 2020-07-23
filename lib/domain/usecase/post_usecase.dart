@@ -6,11 +6,12 @@ import 'package:cards/storage/repository/post_repo_imp.dart';
 import 'package:cards/storage/object/post.dart' as Storage;
 import 'package:get/get.dart';
 
-class PostUseCase extends BaseUseCase {
+class PostUseCase extends BaseUseCase<List<Post>> {
   PostRepository _postRepository = Get.find<PostRepositoryImplement>();
 
   Future<List<Post>> getPosts() async {
     List<Storage.Post> posts = await _postRepository.getPosts();
-    return posts.map((e) => Post.fromStorage(e)).toList();
+    data.value = posts.map((e) => Post.fromStorage(e)).toList();
+    return data.value;
   }
 }

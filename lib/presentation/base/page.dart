@@ -12,10 +12,12 @@ abstract class BaseState<
     Presenter extends BaseContractPresenter,
     Navigator extends BaseContractNavigator,
     ViewModel extends BaseViewModel> extends State<Page> {
-
   Presenter get presenter => Get.find<Presenter>();
+
   ViewModel get viewModel => Get.find<ViewModel>();
+
   Navigator get navigator => Get.find<Navigator>();
+
   View get view => Get.find<View>();
 
   ProgressDialogLoading progressDialogLoading;
@@ -39,17 +41,5 @@ abstract class BaseState<
     if (progressDialogLoading == null) {
       progressDialogLoading = ProgressDialogLoading(context: context);
     }
-  }
-
-  void deInitDependencies() {
-    Get.delete<Presenter>();
-    Get.delete<ViewModel>();
-    Get.delete<View>();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    deInitDependencies();
   }
 }
