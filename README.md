@@ -21,9 +21,6 @@ flutter pub run easy_localization:generate -s "asset/langs" -f keys -o locale_ke
 # Generate json_serializable
 flutter packages pub run build_runner build --delete-conflicting-outputs
 
-# Architecture
-MVVM + MVP + Repository Pattern
-
 # Dependencies
 - [GetX](https://pub.dev/packages/get)
 - [Easy Localization](https://pub.dev/packages/easy_localization)
