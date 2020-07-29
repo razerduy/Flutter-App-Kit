@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 
 import 'home_viewmodel.dart';
 
-class HomePresenter extends BasePresenter implements HomeContract.Presenter {
+class HomePresenter extends BasePresenter implements HomeContract.HomeContractPresenter {
   final HomeViewModel _viewModel = Get.find();
   final PostUseCase _postUseCase = Get.find();
 

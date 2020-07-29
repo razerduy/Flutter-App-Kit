@@ -24,10 +24,10 @@ class DetailPage extends StatefulWidget {
 
 class _DetailState extends BaseState<
     DetailPage,
-    DetailContract.View,
-    DetailContract.Presenter,
-    DetailContract.Navigator,
-    DetailViewModel> implements DetailContract.View {
+    DetailContract.DetailContractView,
+    DetailContract.DetailContractPresenter,
+    DetailContract.DetailContractNavigator,
+    DetailViewModel> implements DetailContract.DetailContractView {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,8 +52,8 @@ class _DetailState extends BaseState<
 
   @override
   void initDependencies() {
-    Get.lazyPut<DetailContract.View>(() => this);
-    Get.lazyPut<DetailContract.Presenter>(() => DetailPresenter());
+    Get.lazyPut<DetailContract.DetailContractView>(() => this);
+    Get.lazyPut<DetailContract.DetailContractPresenter>(() => DetailPresenter());
     Get.lazyPut<DetailViewModel>(() => DetailViewModel());
   }
 }

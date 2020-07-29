@@ -1,13 +1,13 @@
 import 'package:cards/presentation/base/contract.dart';
 
-abstract class View extends BaseContractView {
+abstract class HomeContractView extends BaseContractView {
 
 }
 
-abstract class Presenter extends BaseContractPresenter {
+abstract class HomeContractPresenter extends BaseContractPresenter {
   void getPost();
 }
 
-abstract class Navigator extends BaseContractNavigator {
+abstract class HomeContractNavigator extends BaseContractNavigator {
   void gotoDetail({ String title, String content });
 }

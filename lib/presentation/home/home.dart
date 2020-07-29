@@ -23,15 +23,15 @@ class HomePage extends StatefulWidget {
 
 class _HomeState extends BaseState<
     HomePage,
-    HomeContract.View,
-    HomeContract.Presenter,
-    HomeContract.Navigator,
-    HomeViewModel> implements HomeContract.View {
+    HomeContract.HomeContractView,
+    HomeContract.HomeContractPresenter,
+    HomeContract.HomeContractNavigator,
+    HomeViewModel> implements HomeContract.HomeContractView {
   @override
   void initDependencies() {
-    Get.lazyPut<HomeContract.View>(() => this);
-    Get.lazyPut<HomeContract.Presenter>(() => HomePresenter());
-    Get.lazyPut<HomeContract.Navigator>(() => HomeNavigator());
+    Get.lazyPut<HomeContract.HomeContractView>(() => this);
+    Get.lazyPut<HomeContract.HomeContractPresenter>(() => HomePresenter());
+    Get.lazyPut<HomeContract.HomeContractNavigator>(() => HomeNavigator());
     Get.lazyPut<HomeViewModel>(() => HomeViewModel());
   }
 
